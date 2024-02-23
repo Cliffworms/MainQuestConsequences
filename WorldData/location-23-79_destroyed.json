@@ -1,0 +1,82 @@
+{
+    "Loaded": true,
+    "Name": "Woodborne Hall",
+    "RegionName": "Wayrest",
+    "HasDungeon": true,
+    "MapTableData": {
+        "MapId": 83032363,
+        "Latitude": 39079,
+        "Longitude": 110008,
+        "LocationType": "DungeonLabyrinth",
+        "DungeonType": "HumanStronghold",
+        "Discovered": false,
+        "Key": 0
+    },
+    "Exterior": {
+        "RecordElement": {
+            "Header": {
+                "X": 28166144,
+                "Y": 10008321,
+                "IsExterior": 32768,
+                "Unknown2": 79,
+                "LocationId": 50018,
+                "IsInterior": 0,
+                "ExteriorLocationId": 0,
+                "LocationName": "Woodborne Hall"
+            }
+        },
+        "BuildingCount": 0,
+        "Buildings": [],
+        "ExteriorData": {
+            "AnotherName": "Woodborne Hall",
+            "MapId": 194859,
+            "LocationId": 50018,
+            "Width": 1,
+            "Height": 1,
+            "PortTownAndUnknown": 0,
+            "BlockNames": [
+                "CUSTAA29.RMB"
+            ]
+        }
+    },
+    "Dungeon": {
+        "RecordElement": {
+            "Header": {
+                "X": 28166144,
+                "Y": 10008321,
+                "IsExterior": 0,
+                "Unknown2": 18,
+                "LocationId": 50019,
+                "IsInterior": 1,
+                "ExteriorLocationId": 50018,
+                "LocationName": "Woodborne Hall"
+            }
+        },
+        "Header": {
+            "BlockCount": 1
+        },
+        "Blocks": [
+            {
+                "X": 0,
+                "Z": 0,
+                "IsStartingBlock": true,
+                "BlockName": "S0000100Destroyed.RDB",
+                "WaterLevel": 0,
+                "CastleBlock": false
+            }
+        ]
+    },
+    "Climate": {
+        "WorldClimate": 231,
+        "ClimateType": "Temperate",
+        "NatureSet": "Nature_TemperateWoodland",
+        "GroundArchive": 302,
+        "NatureArchive": 504,
+        "SkyBase": 16,
+        "People": "Breton",
+        "Names": "Nord"
+    },
+    "Politic": 151,
+    "RegionIndex": 23,
+    "LocationIndex": 79
+}

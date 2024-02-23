@@ -1,0 +1,5 @@
+-- Cliffworms' Main Quest Consequences
+
+schema: *name, group, membership, minReq, flag, notes
+
+MQCControl, InitAtGameStart, M, 0, 0, Quest that applies the world changes

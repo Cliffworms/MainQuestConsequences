@@ -1,0 +1,160 @@
+Quest: MQCControl
+DisplayName: Main Quest Consequences control
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                               DPMQ 1000
+
+RefuseQuest:  [1001]
+<ce>                               DPMQ 1001
+
+AcceptQuest:  [1002]
+<ce>                               DPMQ 1002
+
+QuestFail:  [1003]
+<ce>                               DPMQ 1003
+
+QuestComplete:  [1004]
+<ce>                               DPMQ 1004
+
+--Message:  1010
+--Clear Direnni?
+--
+--Message: 1020
+--KoW got totem?
+--
+--Message: 1030
+--Wayrest Won?
+--
+--Message: 1040
+--Sentinel Won?
+--
+--Message: 1050
+--Daggerfall Won?
+--
+--Message: 1060
+--Sack Woodborne Hall?
+--
+--Message: 1070
+--Orsinium won??
+
+QBN:
+
+--   Quest start-up:
+
+variable _medorafreed_
+variable _KoWTotem_
+variable _WayrestTotem_
+variable _SentinelTotem_
+variable _DaggerfallTotem_
+variable _OrsiniumTotem_
+variable _WoodborneHallDestroyed_
+
+--prompt 1010 yes _clearDirenniTest_ no _no_
+--prompt 1020 yes _KoWWonTest_ no _no_
+--prompt 1030 yes _WayrestWonTest_ no _no_
+--prompt 1040 yes _SentinelWonTest_ no _no_
+--prompt 1050 yes _DaggerfallWonTest_ no _no_
+--prompt 1060 yes _DestroyWoodborneHall_ no _no_
+--prompt 1070 yes _OrsiniumWonTest_ no _no_
+
+MedoraGotHorn _dummy_
+setvar _medorafreed_
+
+LiftedCurse _dummy2_
+setvar _WoodborneHallDestroyed_
+
+KingOfWormsGotTotem _dummy3_
+setvar _KoWTotem_
+
+EadwyreGotTotem _dummy4_
+setvar _WayrestTotem_
+
+AkorithiGotTotem _dummy5_
+setvar _SentinelTotem_
+
+GothrydGotTotem _dummy6_
+setvar _DaggerfallTotem_
+
+GortwogGotTotem _dummy7_
+setvar _OrsiniumTotem_
+
+
+
+_clearDirenni_ task:
+    when _medorafreed_
+    worldupdate location at 41 in region 9 variant _cleared
+
+_DestroyWoodborneHall_ task:
+    when _WoodborneHallDestroyed_
+    worldupdate location at 79 in region 23 variant _destroyed
+
+_KoWWon_ task:
+    when _KoWTotem_
+    worldupdate location at 669 in region 1 variant _kowgone
+    end quest
+
+_WayrestWon_ task:
+    when _WayrestTotem_
+    worldupdate location at 1231 in region 17 variant _wayrestwon
+    worldupdate location at 6 in region 20 variant _wayrestwon
+    worldupdate location at 601 in region 23 variant _wayrestwon
+    worldupdate location at 18 in region 26 variant _destroyed
+    end quest
+
+_SentinelWon_ task:
+    when _SentinelTotem_
+    worldupdate location at 1231 in region 17 variant _sentinelwon
+    worldupdate location at 601 in region 23 variant _sentinelwon
+    worldupdate location at 18 in region 26 variant _destroyed
+    end quest
+
+_DaggerfallWon_ task:
+    when _DaggerfallTotem_
+    worldupdate location at 6 in region 20 variant _daggerfallwon
+    worldupdate location at 601 in region 23 variant _daggerfallwon
+    worldupdate location at 18 in region 26 variant _destroyed
+    end quest
+
+_OrsiniumWon_ task:
+    when _OrsiniumTotem_
+    worldupdate location at 6 in region 20 variant _orsiniumwon
+    worldupdate location at 601 in region 23 variant _orsiniumwon
+    worldupdate location at 18 in region 26 variant _orsiniumwon
+    worldupdate location at 1231 in region 17 variant _orsiniumwon
+    end quest
+
+
+--_clearDirenniTest_ task:
+--    worldupdate location at 41 in region 9 variant _cleared
+--
+--_KoWWonTest_ task:
+--    worldupdate location at 669 in region 1 variant _kowgone
+--
+--_WayrestWonTest_ task:
+--    worldupdate location at 1231 in region 17 variant _wayrestwon
+--    worldupdate location at 6 in region 20 variant _wayrestwon
+--    worldupdate location at 601 in region 23 variant _wayrestwon
+--    worldupdate location at 18 in region 26 variant _destroyed
+--    
+--_SentinelWonTest_ task:
+--    worldupdate location at 1231 in region 17 variant _sentinelwon
+--    worldupdate location at 601 in region 23 variant _sentinelwon
+--    worldupdate location at 18 in region 26 variant _destroyed
+--
+--_DaggerfallWonTest_ task:
+--    worldupdate location at 6 in region 20 variant _daggerfallwon
+--    worldupdate location at 601 in region 23 variant _daggerfallwon
+--    worldupdate location at 18 in region 26 variant _destroyed
+--
+--_OrsiniumWonTest_ task:
+--    worldupdate location at 6 in region 20 variant _orsiniumwon
+--    worldupdate location at 601 in region 23 variant _orsiniumwon
+--    worldupdate location at 18 in region 26 variant _orsiniumwon
+--    worldupdate location at 1231 in region 17 variant _orsiniumwon
+--	
+--_DestroyWoodborneHall_ task:
+--    worldupdate location at 79 in region 23 variant _destroyed
+--
+--_no_ task:
